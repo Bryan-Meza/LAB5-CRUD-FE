@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import TipoIniciativaList from "./components/CountryList";
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header className="banorte-header">
+        <div className="banorte-header-content">
+          <div className="banorte-logo">
+            <span className="banorte-logo-icon">B</span>
+            <span className="banorte-logo-text">Banorte</span>
+          </div>
+          <h1>Gestión de Tipos de Iniciativa</h1>
+        </div>
       </header>
+      <main className="banorte-main">
+        <TipoIniciativaList />
+      </main>
+      <footer className="banorte-footer">
+        <p>© 2026 Banorte — Sistema de Gestión de Tipos de Iniciativa</p>
+      </footer>
     </div>
   );
 }

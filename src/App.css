@@ -1,38 +1,485 @@
+/* ===== BANORTE THEME - Tipos de Iniciativa ===== */
+
+:root {
+  --banorte-red: #EB0029;
+  --banorte-dark-red: #B8001F;
+  --banorte-darker-red: #8C0018;
+  --banorte-black: #1A1A1A;
+  --banorte-dark-gray: #333333;
+  --banorte-gray: #666666;
+  --banorte-light-gray: #F2F2F2;
+  --banorte-border: #E0E0E0;
+  --banorte-white: #FFFFFF;
+  --banorte-green: #28A745;
+  --banorte-orange: #E67E22;
+  --banorte-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  --banorte-shadow-hover: 0 6px 24px rgba(0, 0, 0, 0.12);
+  --banorte-radius: 8px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  background-color: var(--banorte-light-gray);
+  color: var(--banorte-dark-gray);
+  line-height: 1.6;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== HEADER ===== */
+.banorte-header {
+  background: linear-gradient(135deg, var(--banorte-red) 0%, var(--banorte-dark-red) 100%);
+  color: var(--banorte-white);
+  padding: 0;
+  box-shadow: 0 4px 16px rgba(235, 0, 41, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.banorte-header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.banorte-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.banorte-logo-icon {
+  background-color: var(--banorte-white);
+  color: var(--banorte-red);
+  font-weight: 900;
+  font-size: 24px;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+
+.banorte-logo-text {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.banorte-header h1 {
+  font-size: 20px;
+  font-weight: 400;
+  opacity: 0.95;
+  border-left: 2px solid rgba(255, 255, 255, 0.4);
+  padding-left: 24px;
+}
+
+/* ===== MAIN ===== */
+.banorte-main {
+  flex: 1;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 32px 24px;
+}
+
+/* ===== CONTAINER & TOOLBAR ===== */
+.banorte-container {
+  width: 100%;
+}
+
+.banorte-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 3px solid var(--banorte-red);
+}
+
+.banorte-toolbar h2 {
+  font-size: 26px;
+  color: var(--banorte-black);
+  font-weight: 700;
+}
+
+/* ===== BUTTONS ===== */
+.banorte-btn {
+  padding: 10px 22px;
+  border: none;
+  border-radius: var(--banorte-radius);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  letter-spacing: 0.3px;
+}
+
+.banorte-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.banorte-btn-primary {
+  background: linear-gradient(135deg, var(--banorte-red) 0%, var(--banorte-dark-red) 100%);
+  color: var(--banorte-white);
+  box-shadow: 0 2px 8px rgba(235, 0, 41, 0.3);
+}
+
+.banorte-btn-primary:hover:not(:disabled) {
+  background: linear-gradient(135deg, var(--banorte-dark-red) 0%, var(--banorte-darker-red) 100%);
+  box-shadow: 0 4px 16px rgba(235, 0, 41, 0.4);
+  transform: translateY(-1px);
+}
+
+.banorte-btn-secondary {
+  background-color: var(--banorte-white);
+  color: var(--banorte-dark-gray);
+  border: 2px solid var(--banorte-border);
+}
+
+.banorte-btn-secondary:hover:not(:disabled) {
+  background-color: var(--banorte-light-gray);
+  border-color: var(--banorte-gray);
+}
+
+.banorte-btn-edit {
+  background-color: var(--banorte-white);
+  color: var(--banorte-red);
+  border: 2px solid var(--banorte-red);
+}
+
+.banorte-btn-edit:hover {
+  background-color: var(--banorte-red);
+  color: var(--banorte-white);
+}
+
+.banorte-btn-delete {
+  background-color: var(--banorte-white);
+  color: var(--banorte-dark-gray);
+  border: 2px solid var(--banorte-border);
+}
+
+.banorte-btn-delete:hover {
+  background-color: #FFF0F0;
+  border-color: var(--banorte-red);
+  color: var(--banorte-red);
+}
+
+/* ===== CARDS ===== */
+.banorte-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 20px;
+}
+
+.banorte-card {
+  background: var(--banorte-white);
+  border-radius: var(--banorte-radius);
+  box-shadow: var(--banorte-shadow);
+  border-left: 4px solid var(--banorte-red);
+  transition: all 0.25s ease;
+  overflow: hidden;
+}
+
+.banorte-card:hover {
+  box-shadow: var(--banorte-shadow-hover);
+  transform: translateY(-2px);
+}
+
+.banorte-card-inactive {
+  border-left-color: var(--banorte-gray);
+  opacity: 0.75;
+}
+
+.banorte-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 20px 10px;
+}
+
+.banorte-card-header h3 {
+  font-size: 18px;
+  color: var(--banorte-black);
+  font-weight: 700;
+}
+
+.banorte-badge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.banorte-badge-active {
+  background-color: #E8F5E9;
+  color: var(--banorte-green);
+}
+
+.banorte-badge-inactive {
+  background-color: #FFF3E0;
+  color: var(--banorte-orange);
+}
+
+.banorte-card-body {
+  padding: 0 20px 12px;
+}
+
+.banorte-card-body p {
+  font-size: 14px;
+  color: var(--banorte-gray);
+  margin-bottom: 6px;
+}
+
+.banorte-card-date {
+  font-size: 12px !important;
+  color: #999 !important;
+  margin-top: 8px !important;
+}
+
+.banorte-card-actions {
+  display: flex;
+  gap: 10px;
+  padding: 12px 20px 18px;
+  border-top: 1px solid var(--banorte-light-gray);
+}
+
+/* ===== FORM CARD ===== */
+.banorte-form-card {
+  background: var(--banorte-white);
+  border-radius: var(--banorte-radius);
+  box-shadow: var(--banorte-shadow);
+  padding: 28px;
+  margin-bottom: 24px;
+  border-top: 4px solid var(--banorte-red);
+}
+
+.banorte-form-card h3 {
+  font-size: 20px;
+  color: var(--banorte-black);
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--banorte-border);
+}
+
+/* ===== FORM ===== */
+.banorte-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.banorte-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.banorte-form-group label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--banorte-dark-gray);
+}
+
+.banorte-form-group input[type="text"],
+.banorte-form-group textarea {
+  padding: 12px 14px;
+  border: 2px solid var(--banorte-border);
+  border-radius: var(--banorte-radius);
+  font-size: 14px;
+  font-family: inherit;
+  color: var(--banorte-dark-gray);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  background-color: var(--banorte-white);
+  resize: vertical;
+}
+
+.banorte-form-group input[type="text"]:focus,
+.banorte-form-group textarea:focus {
+  outline: none;
+  border-color: var(--banorte-red);
+  box-shadow: 0 0 0 3px rgba(235, 0, 41, 0.12);
+}
+
+.banorte-form-group input[type="text"]::placeholder,
+.banorte-form-group textarea::placeholder {
+  color: #BBBBBB;
+}
+
+.banorte-form-group input:disabled,
+.banorte-form-group textarea:disabled {
+  background-color: var(--banorte-light-gray);
+  cursor: not-allowed;
+}
+
+/* ===== CHECKBOX ===== */
+.banorte-checkbox-group {
+  flex-direction: row !important;
+  align-items: center;
+}
+
+.banorte-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 14px !important;
+  font-weight: 600;
+  color: var(--banorte-dark-gray);
+  user-select: none;
+}
+
+.banorte-checkbox-label input[type="checkbox"] {
+  display: none;
+}
+
+.banorte-checkbox-custom {
+  width: 22px;
+  height: 22px;
+  border: 2px solid var(--banorte-border);
+  border-radius: 4px;
+  position: relative;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.banorte-checkbox-label input[type="checkbox"]:checked + .banorte-checkbox-custom {
+  background-color: var(--banorte-red);
+  border-color: var(--banorte-red);
+}
+
+.banorte-checkbox-label input[type="checkbox"]:checked + .banorte-checkbox-custom::after {
+  content: '✓';
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* ===== FORM ACTIONS ===== */
+.banorte-form-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+/* ===== ERROR ===== */
+.banorte-error {
+  background-color: #FFF0F0;
+  color: var(--banorte-red);
+  padding: 14px 18px;
+  border-radius: var(--banorte-radius);
+  border-left: 4px solid var(--banorte-red);
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+/* ===== LOADING ===== */
+.banorte-loading {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 60px 20px;
+  gap: 16px;
 }
 
-.App-link {
-  color: #61dafb;
+.banorte-spinner {
+  width: 44px;
+  height: 44px;
+  border: 4px solid var(--banorte-light-gray);
+  border-top: 4px solid var(--banorte-red);
+  border-radius: 50%;
+  animation: banorte-spin 0.8s linear infinite;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
+@keyframes banorte-spin {
   to {
     transform: rotate(360deg);
+  }
+}
+
+.banorte-loading p {
+  color: var(--banorte-gray);
+  font-size: 15px;
+}
+
+/* ===== EMPTY STATE ===== */
+.banorte-empty {
+  text-align: center;
+  color: var(--banorte-gray);
+  padding: 40px;
+  font-size: 16px;
+  grid-column: 1 / -1;
+}
+
+/* ===== FOOTER ===== */
+.banorte-footer {
+  background-color: var(--banorte-black);
+  color: rgba(255, 255, 255, 0.6);
+  text-align: center;
+  padding: 18px 24px;
+  font-size: 13px;
+  margin-top: auto;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .banorte-header-content {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .banorte-header h1 {
+    border-left: none;
+    padding-left: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    padding-top: 10px;
+    font-size: 16px;
+  }
+
+  .banorte-toolbar {
+    flex-direction: column;
+    gap: 14px;
+    align-items: stretch;
+    text-align: center;
+  }
+
+  .banorte-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .banorte-form-actions {
+    flex-direction: column;
+  }
+
+  .banorte-card-actions {
+    flex-direction: column;
   }
 }
